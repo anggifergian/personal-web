@@ -1,49 +1,52 @@
-import Image from 'next/image'
+import { useState } from 'react'
+import { LinkedinFilled, GithubFilled, InstagramFilled, TwitterOutlined } from '@ant-design/icons'
 
-const Footer = () => (
-  <div>
-    <div className='grid grid-cols-4 gap-2'>
-      <div className='p-2 text-slate-800 dark:text-white flex space-x-2'>
-        <Image
-          src={'/icons/Linkedin.svg'}
-          width={24}
-          height={24}
-        />
-        <p className='hidden md:block'>Linkedin</p>
+const Footer = () => {
+  const [socmed] = useState([
+    {
+      id: 1,
+      label: 'Linkedin',
+      icon: <LinkedinFilled style={{ fontSize: 20 }} />,
+      link: 'https://www.linkedin.com/in/anggifergian/',
+    },
+    {
+      id: 2,
+      label: 'Github',
+      icon: <GithubFilled style={{ fontSize: 20 }} />,
+      link: 'https://github.com/anggifergian',
+    },
+    {
+      id: 3,
+      label: 'Instagram',
+      icon: <InstagramFilled style={{ fontSize: 20 }} />,
+      link: 'https://www.instagram.com/anggifergian/?hl=en',
+    },
+    {
+      id: 4,
+      label: 'Twitter',
+      icon: <TwitterOutlined style={{ fontSize: 20 }} />,
+      link: 'https://twitter.com/anggifergian',
+    }
+  ])
+
+  return (
+    <div className='pt-6 pb-4 md:max-w-2xl mx-auto border-t-2 border-t-gray-200'>
+      <div className='flex justify-center'>
+        {socmed.map(item => (
+          <a key={item.id} href={item.link} target='_blank' rel="noreferrer">
+            <div className='px-4 text-slate-900 dark:text-white flex space-x-2 items-center'>
+              {item.icon}
+              <p className='hidden md:block'>{item.label}</p>
+            </div>
+          </a>
+        ))}
       </div>
 
-      <div className='p-2 text-slate-800 dark:text-white flex space-x-2'>
-        <Image
-          src={'/icons/Github.svg'}
-          width={24}
-          height={24}
-        />
-        <p className='hidden md:block'>Github</p>
-      </div>
-
-      <div className='p-2 text-slate-800 dark:text-white flex space-x-2'>
-        <Image
-          src={'/icons/Instagram.svg'}
-          width={24}
-          height={24}
-        />
-        <p className='hidden md:block'>Instagram</p>
-      </div>
-
-      <div className='p-2 text-slate-800 dark:text-white flex space-x-2'>
-        <Image
-          src={'/icons/Twitter.svg'}
-          width={24}
-          height={24}
-        />
-        <p className='hidden md:block'>Twitter</p>
+      <div>
+        <p className='p-4 text-center text-slate-900 dark:text-white'>© 2022 Anggi Fergian Pratama</p>
       </div>
     </div>
-
-    <div>
-      <p className='pt-4 text-center'>© 2022 Anggi Fergian Pratama</p>
-    </div>
-  </div>
-)
+  )
+}
 
 export default Footer

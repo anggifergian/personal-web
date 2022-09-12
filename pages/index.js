@@ -1,14 +1,22 @@
-import Image from 'next/image'
+import { useTheme } from 'next-themes'
+
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const { theme, setTheme } = useTheme()
+
   return (
     <div className={styles.container}>
       <Header />
 
       <main className={styles.main}>
+
+        <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+          {theme === 'dark' ? 'Light' : 'Dark'}
+        </button>
+
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
@@ -49,7 +57,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className={styles.footer}>
+      <footer>
         <Footer />
       </footer>
     </div>
