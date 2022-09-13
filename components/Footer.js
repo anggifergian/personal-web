@@ -30,11 +30,11 @@ const Footer = () => {
   ])
 
   return (
-    <div className='pt-6 pb-4 md:max-w-2xl mx-auto border-t-2 border-t-gray-200'>
+    <div className='pt-8 pb-4 md:max-w-2xl mx-auto border-t border-t-gray-300 border-opacity-90 dark:border-opacity-50'>
       <div className='flex justify-center'>
         {socmed.map(item => (
           <a key={item.id} href={item.link} target='_blank' rel="noreferrer">
-            <div className='px-4 text-slate-900 dark:text-white flex space-x-2 items-center'>
+            <div className='px-4 text-slate-800 dark:text-white flex space-x-2 items-center'>
               {item.icon}
               <p className='hidden md:block'>{item.label}</p>
             </div>
@@ -43,7 +43,7 @@ const Footer = () => {
       </div>
 
       <div>
-        <p className='p-4 text-center text-slate-900 dark:text-white'>© 2022 Anggi Fergian Pratama</p>
+        <p className='p-4 text-center text-slate-800 dark:text-white'>© 2022 Anggi Fergian Pratama</p>
       </div>
     </div>
   )
