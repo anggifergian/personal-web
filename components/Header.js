@@ -7,7 +7,7 @@ const Header = ({ title = 'Anggi Fergian' }) => (
     <meta name="description" content="Anggi Fergian Pratama" />
 
     <title>{title}</title>
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/af-logo.ico" />
   </Head>
 )
 

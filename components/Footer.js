@@ -33,11 +33,9 @@ const Footer = () => {
     <div className='pt-8 pb-4 md:max-w-2xl mx-auto border-t border-t-gray-300 border-opacity-90 dark:border-opacity-50'>
       <div className='flex justify-center'>
         {socmed.map(item => (
-          <a key={item.id} href={item.link} target='_blank' rel="noreferrer">
-            <div className='px-4 text-slate-800 dark:text-white flex space-x-2 items-center'>
-              {item.icon}
-              <p className='hidden md:block'>{item.label}</p>
-            </div>
+          <a key={item.id} href={item.link} target='_blank' rel="noreferrer" className='px-4 text-slate-800 dark:text-white flex space-x-2 items-center hover:text-blue-600'>
+            {item.icon}
+            <p className='hidden md:block'>{item.label}</p>
           </a>
         ))}
       </div>
