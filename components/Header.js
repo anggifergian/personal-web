@@ -24,6 +24,7 @@ const Header = ({ title = 'Anggi Fergian' }) => (
       <meta charSet='utf-8' />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="description" content="Anggi Fergian Pratama" />
+      <meta name="theme-color" />
 
       <title>{title}</title>
       <link rel="icon" href="/af-logo.ico" />
