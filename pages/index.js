@@ -117,6 +117,8 @@ export default function Home() {
       <main className='px-8 md:max-w-2xl mx-auto'>
         <div className='flex justify-end pt-6 py-4'>
           <button
+            id='btn-dark-light'
+            aria-label='Dark Light'
             onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
             className='px-2 py-2 border border-slate-300 rounded-xl bg-transparent hover:bg-slate-100 text-slate-500 dark:text-white dark:bg-transparent dark:hover:bg-slate-900 transition duration-200 ease-in-out'
           >
@@ -153,7 +155,8 @@ export default function Home() {
               <div key={item.key}>
                 <div className='mb-3 overflow-hidden rounded-lg dark:border-0 border-2 border-slate-200 border-opacity-40 hover:shadow-lg hover:border-opacity-0 transition ease-in-out duration-300'>
                   <Image
-                    priority={item.key === 'galaxy-store'}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    loading='lazy'
                     alt={item.key}
                     src={item.imagePath}
                     height={300}
@@ -195,7 +198,9 @@ export default function Home() {
 
           <div className='pt-4 flex justify-center'>
             <button
-              className='px-6 py-2 rounded-xl border hover:border-blue-500 hover:text-blue-600'
+              id='btn-see-more'
+              aria-label='See more'
+              className='px-6 py-2 rounded-xl border hover:border-blue-500 hover:text-blue-600 transition duration-200 ease-in-out'
               onClick={handleSeeMore}
             >
               {state.isExpMore ? 'See less' : 'See more'}
